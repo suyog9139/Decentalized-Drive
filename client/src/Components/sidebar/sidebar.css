@@ -1,0 +1,40 @@
+.app__sidebar{
+    width: 15%;
+    height: 100vh;
+    margin-right: 5px;
+}
+
+hr{
+    background-color: rgb(197, 197, 197);
+    height: 1px;
+    border: none;
+}
+.app__sidebar-new {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.app__sidebar-icon-add{
+    display: flex;
+    font-size: large;
+    margin-top: 3.6px;
+    margin-left: 30px;
+    border: none;
+}
+
+.app__new_p{
+    margin-top: 12px;
+    margin-left: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.app__add-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 12px;
+    font-size: 16px;
+}
