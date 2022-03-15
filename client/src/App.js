@@ -1,8 +1,9 @@
 import './App.css';
-import {Header, Sidebar, SideIcons} from './Components'
+import {Header, Sidebar, SideIcons, FilesView} from './Components'
 // import FilesView from './components/filesView/FilesView'
 // import SideIcons from './components/sideIcons'
 // import GDriveLogo from './media/google-drive-logo.png'
+
 
 import { useState } from 'react';
 import Web3 from 'web3';
@@ -153,7 +154,7 @@ class App extends Component {
                     uploadFile={this.uploadFile}
                   />
             }
-            {/* <FilesView /> */}
+            <FilesView files={this.state.files} />
             <SideIcons />
           </div>
         </>

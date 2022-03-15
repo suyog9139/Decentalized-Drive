@@ -1,3 +1,4 @@
 export {default as Header} from './header/header';
 export {default as Sidebar} from './sidebar/sidebar';
 export {default as SideIcons} from './sideicons/sideicons';
+export {default as FilesView} from './filesView/FilesView';

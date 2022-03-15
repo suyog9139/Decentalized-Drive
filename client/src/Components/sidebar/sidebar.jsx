@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './sidebar.css'
-import NewFile from './NewFile'
 import SidebarItem from './sidebaritem'
 import Modal from 'react-modal';
 import ModalButton from './modal-button';
