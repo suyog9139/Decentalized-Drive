@@ -5,7 +5,7 @@ import Identicon from 'identicon.js';
 
 import GDriveLogo from '../../media/google-drive-logo.png'
 
-import {Search, ExpandMore, HelpOutline, Settings, Apps, AccountCircle } from '@material-ui/icons';
+import {Search, ExpandMore, HelpOutline, Settings, Apps} from '@material-ui/icons';
 
 
 class header extends Component {

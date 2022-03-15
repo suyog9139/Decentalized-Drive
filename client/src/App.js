@@ -1,14 +1,7 @@
 import './App.css';
 import {Header, Sidebar, SideIcons, FilesView} from './Components'
-// import FilesView from './components/filesView/FilesView'
-// import SideIcons from './components/sideIcons'
-// import GDriveLogo from './media/google-drive-logo.png'
-
-
-import { useState } from 'react';
 import Web3 from 'web3';
 import DStorage from './contracts/GDStorage.json'
-
 
 import React, { Component }  from 'react';
 //Declare IPFS
@@ -51,14 +44,14 @@ class App extends Component {
     //IF got connection, get data from contracts
     if(networkData) {
       //Assign contract
-      const dstorage = new web3.eth.Contract(DStorage.abi, networkData.address)
-      this.setState({ dstorage })
+      const gdstorage = new web3.eth.Contract(DStorage.abi, networkData.address)
+      this.setState({ gdstorage })
       //Get files amount
-      const filesCount = await dstorage.methods.fileCount().call()
+      const filesCount = await gdstorage.methods.fileCount().call()
       this.setState({ filesCount })
       //Load files&sort by the newest
       for(let i = filesCount; i>=1; i--) {
-        const file = await dstorage.methods.files(i).call()
+        const file = await gdstorage.methods.files(i).call()
         this.setState({
           files: [file, ...this.state.files]
         })
@@ -110,7 +103,7 @@ class App extends Component {
       if(this.state.type === ''){
         this.setState({type: 'none'})
       }
-      this.state.dstorage.methods.uploadFile(result[0].hash, result[0].size, this.state.type, this.state.name, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.gdstorage.methods.uploadFile(result[0].hash, result[0].size, this.state.type, this.state.name, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({
          loading: false,
          type: null,
@@ -129,7 +122,7 @@ class App extends Component {
     super(props)
     this.state = {
       account: '',
-      dstorage: null,
+      gdstorage: null,
       files: [],
       loading: false,
       type: null,
