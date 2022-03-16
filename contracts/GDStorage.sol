@@ -4,8 +4,7 @@ pragma solidity >=0.4.21 <0.8.0;
 contract GDStorage {
   string public name = 'GDStorage';
   uint public fileCount = 0;
-  // Name
-  // Number of files
+  
   // Mapping fileId=>Struct
   mapping(uint => File) public files;
   // Struct
@@ -36,17 +35,11 @@ contract GDStorage {
 
   // Upload File function
   function uploadFile(string memory _fileHash, uint _fileSize, string memory _fileType, string memory _fileName, string memory _fileDescription) public {
-    // make sure the file hash exits
     require(bytes(_fileHash).length > 0);
-    // make sure the file type exits
     require(bytes(_fileType).length > 0);
-    // make sure the file name exits
     require(bytes(_fileName).length > 0);
-    // make sure the file description exits
     require(bytes(_fileDescription).length > 0);
-    // make sure uploader address exists
     require(msg.sender!= address(0));
-    // make sure the file size is not 0
     require(_fileSize > 0);
     
     fileCount++;
